@@ -1,0 +1,122 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Showing in order of:</h4>
+        <ng-template #popTitle><b>Coaches</b> with the <b>Most Plans</b></ng-template>
+        <ng-template #popContent>Click to change the order of the <b>Coaches</b> in the list below!</ng-template>
+        <select class="form-control" id="order_coaches" [ngbPopover]="popContent" [popoverTitle]="popTitle" triggers="mouseenter:mouseleave">
+            <option value="plans_most">Most Plans</option>
+            <option value="plans_least">Least Plan</option>
+            <option value="plans_activity_most">Most Plan Activity</option> 
+            <option value="plans_activity_least">Least Plan Activity</option> 
+        </select>
+    </div>
+</div>
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Andrew Duncan</h4>
+                <ng-template #popTitle><b>Andrew Deuncan</b></ng-template>
+                <ng-template #popContent>Click to change the order of the <b>Coaches</b> in the list below!</ng-template>
+                <div class="user-profile pb-4 border-bottom">
+                    <div class="profile-img">
+                        <img src="assets/images/users/andrew-duncan.jpg" alt="Andrew Duncan" />
+                    </div>
+                </div>
+                <div class="text-right fifty">
+                    <h2 class="font-light font-weight-normal m-b-0">
+                        <i class="ti-arrow-up text-success"></i> 12</h2>
+                    <span class="text-muted">New Plans</span>
+                </div>
+                <span class="text-success pa">63% plan activity</span>
+                <ngb-progressbar [showValue]="false" type="success" [value]="63"></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Simon Teague</h4>
+                <div class="user-profile pb-4 border-bottom">
+                    <div class="profile-img">
+                        <img src="assets/images/users/simon-teague.jpg" alt="Simon Teague" />
+                    </div>
+                </div>
+                <div class="text-right fifty">
+                    <h2 class="font-light font-weight-normal m-b-0">
+                        <i class="ti-arrow-up text-success"></i> 5</h2>
+                    <span class="text-muted">New Plans</span>
+                </div>
+                <span class="text-success pa">77% plan activity</span>
+                <ngb-progressbar [showValue]="false" type="success" [value]="77"></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Debbie Brown</h4>
+                <div class="user-profile pb-4 border-bottom">
+                    <div class="profile-img">
+                        <img src="assets/images/users/no-pic.png" alt="Debbiw Brown" />
+                    </div>
+                </div>
+                <div class="text-right fifty">
+                    <h2 class="font-light font-weight-normal m-b-0">
+                        <i class="ti-arrow-up text-success"></i> 5</h2>
+                    <span class="text-muted">New Plans</span>
+                </div>
+                <span class="text-success pa">88% plan activity</span>
+                <ngb-progressbar [showValue]="false" type="success" [value]="88"></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Paul Hayes</h4>
+                <div class="user-profile pb-4 border-bottom">
+                    <div class="profile-img">
+                        <img src="assets/images/users/no-pic.png" alt="Paul Hayes" />
+                    </div>
+                </div>
+                <div class="text-right fifty">
+                    <h2 class="font-light font-weight-normal m-b-0">
+                        <i class="ti-arrow-up text-success"></i> 4</h2>
+                    <span class="text-muted">New Plans</span>
+                </div>
+                <span class="text-success pa">46% plan activity</span>
+                <ngb-progressbar [showValue]="false" type="success" [value]="46"></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Katie Farrell</h4>
+                <div class="user-profile pb-4 border-bottom">
+                    <div class="profile-img">
+                        <img src="assets/images/users/no-pic.png" alt="Paul Hayes" />
+                    </div>
+                </div>
+                <div class="text-right fifty">
+                    <h2 class="font-light font-weight-normal m-b-0">
+                        <i class="ti-arrow-up text-success"></i> 2</h2>
+                    <span class="text-muted">New Plans</span>
+                </div>
+                <span class="text-success pa">68% plan activity</span>
+                <ngb-progressbar [showValue]="false" type="success" [value]="68"></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>

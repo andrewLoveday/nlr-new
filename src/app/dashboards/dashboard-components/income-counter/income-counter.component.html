@@ -1,0 +1,344 @@
+<ng-template #popTitleFilter>Apply filters!</ng-template>
+<ng-template #popContentFilter>Click to filter the <b>Coaches</b> on display in the list below!</ng-template>
+<ngb-accordion #acc="ngbAccordion" activeIds="">
+    <ngb-panel id="filter">
+        <div class="row">
+            <div class="col-md-3">
+                <ng-template ngbPanelTitle>
+                    <span class="open-coach-filters down text-info" [ngbPopover]="popContentFilter" [popoverTitle]="popTitleFilter" triggers="mouseenter:mouseleave" container="body">
+                        Click to show <b>Coach</b> filters
+                        <i class="fa fas fa-angle-down coach-filter-arrow"></i>
+                    </span>
+                </ng-template>
+            </div>
+        </div>
+        <ng-template ngbPanelContent>
+            <div class="row">
+                <div class="col-md-6 pl-0">
+                    <div class="card filter-card">
+                        <div class="card-body">
+                            <ng-template #popTitleorder>Order of <b>Coaches</b> displayed below!</ng-template>
+                            <ng-template #popContentorder>Click to change the order of the <b>Coaches</b> in the list below!</ng-template>
+                            <h4 class="card-title" [ngbPopover]="popContentorder" [popoverTitle]="popTitleorder" triggers="mouseenter:mouseleave" container="body">Showing in order of:</h4>
+                            <select class="browser-default custom-select order_coaches">
+                                <option value="coach_name_a_z">Coach name - A to Z</option>
+                                <option value="coach_name_z_a">Coach name - Z to A</option>
+                                <option value="most_plans" selected="selected">Plans Registered - Most to Least</option>
+                                <option value="least_plans">Plans Registered - Least to Most</option>
+                                <option value="most_active">Plan Activity - Most to Least</option>
+                                <option value="least_active">Plan Activity - Least to Most</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pr-0">
+                    <div class="card filter-card">
+                        <div class="card-body">
+                            <ng-template #popTitlecount>Number of <b>Coaches</b> on display!</ng-template>
+                            <ng-template #popContentcount>Change the number of <b>Coaches</b> to display in the list below!</ng-template>
+                            <h4 class="card-title" [ngbPopover]="popContentcount" [popoverTitle]="popTitlecount" triggers="mouseenter:mouseleave">
+                                Show these many Coaches:
+                            </h4>
+                            <div class="form-check form-check-inline">
+                              <input type="radio" class="form-check-input" id="count2" name="amount_of_coaches" value="2" mdbInput>
+                              <label class="form-check-label" for="count2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input type="radio" class="form-check-input" id="count4" name="amount_of_coaches" value="4" mdbInput>
+                              <label class="form-check-label" for="count4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input type="radio" class="form-check-input" id="count6" name="amount_of_coaches" value="6" mdbInput>
+                              <label class="form-check-label" for="count6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input type="radio" class="form-check-input" id="count8" name="amount_of_coaches" value="8" checked="checked" mdbInput>
+                              <label class="form-check-label" for="count8">8</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" [ngbPopover]="popContentpag" [popoverTitle]="popTitlepag" triggers="mouseenter:mouseleave" container="body">Showing <b>1</b> to <b>8</b> of <b>8</b> coaches!</h4>
+                            <ng-template #popTitlepag>Current listing!</ng-template>
+                            <ng-template #popContentpag>You are viewing <b>1</b> to <b>8</b> of <b>8</b> Coaches!</ng-template>
+                            <a href="#js" class="pagination-btn btn btn-outline-success col-md-1 active" data-offset="0">1 to 8</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
+<div class="row coach-cards">
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Andrew Duncan" data-plan_activity="63" data-plan_count="12">
+        <div class="card">
+            <ng-template #popTitleAndrewDuncan>
+                <b>Andrew Duncan</b>
+            </ng-template>
+            <ng-template #popContentAndrewDuncan>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/andrew-duncan.jpg" alt="Andrew Duncan" />
+                </div>
+                <b>12</b> Plans
+            </ng-template>
+            <a href="/coaches/andrew-duncan">
+                <div class="card-body" [ngbPopover]="popContentAndrewDuncan" [popoverTitle]="popTitleAndrewDuncan" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Andrew Duncan</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/andrew-duncan.jpg" alt="Andrew Duncan" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 12
+                        </h2>
+                        <span class="text-muted">Plans </span>
+                    </div>
+                    <span class="text-success pa">63% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="63"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Simon Teague" data-plan_activity="77" data-plan_count="11">
+        <div class="card">
+            <ng-template #popTitleSimonTeague>
+                <b>Simon Teague</b>
+            </ng-template>
+            <ng-template #popContentSimonTeague>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/simon-teague.jpg" alt="Simon Teague" />
+                </div>
+                <b>11</b> Plans
+            </ng-template>
+            <a href="/coaches/simon-teague">
+                <div class="card-body" [ngbPopover]="popContentSimonTeague" [popoverTitle]="popTitleSimonTeague" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Simon Teague</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/simon-teague.jpg" alt="Simon Teague" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 11
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">77% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="77"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Debbie Brown" data-plan_activity="88" data-plan_count="8">
+        <div class="card">
+            <ng-template #popTitleDebbieBrown>
+                <b>Debbie Brown</b>
+            </ng-template>
+            <ng-template #popContentDebbieBrown>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/no-pic.png" alt="Debbie Brown" />
+                </div>
+                <b>8</b> Plans
+            </ng-template>
+            <a href="/coaches/debbie-brown">
+                <div class="card-body" [ngbPopover]="popContentDebbieBrown" [popoverTitle]="popTitleDebbieBrown" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Debbie Brown</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/no-pic.png" alt="Debbiw Brown" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 8
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">88% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="88"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Paul Hayes" data-plan_activity="46" data-plan_count="6">
+        <div class="card">
+            <ng-template #popTitlePaulHayes>
+                <b>Paul Hayes</b>
+            </ng-template>
+            <ng-template #popContentPaulHayes>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/no-pic.png" alt="Paul Hayes" />
+                </div>
+                <b>6</b> Plans
+            </ng-template>
+            <a href="/coaches/paul-hayes">
+                <div class="card-body" [ngbPopover]="popContentPaulHayes" [popoverTitle]="popTitlePaulHayes" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Paul Hayes</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/no-pic.png" alt="Paul Hayes" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 6
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">46% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="46"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Steve Mason" data-plan_activity="92" data-plan_count="5">
+        <div class="card">
+            <ng-template #popTitleSteveMason>
+                <b>Steve Mason</b>
+            </ng-template>
+            <ng-template #popContentSteveMason>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/no-pic.png" alt="Steve Mason" />
+                </div>
+                <b>5</b> Plans
+            </ng-template>
+            <a href="/coaches/steve-mason">
+                <div class="card-body" [ngbPopover]="popContentSteveMason" [popoverTitle]="popTitleSteveMason" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Steve Mason</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/no-pic.png" alt="Steve Mason" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 5
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">92% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="92"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Katie Farrell" data-plan_activity="68" data-plan_count="4">
+        <div class="card">
+            <ng-template #popTitleKatieFarrell>
+                <b>Katie Farrell</b>
+            </ng-template>
+            <ng-template #popContentKatieFarrell>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/no-pic.png" alt="Katie Farrell" />
+                </div>
+                <b>4</b> Plans
+            </ng-template>
+            <a href="/coaches/katie-farrell">
+                <div class="card-body" [ngbPopover]="popContentKatieFarrell" [popoverTitle]="popTitleKatieFarrell" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Katie Farrell</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/no-pic.png" alt="Katie Farrell" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 4
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">68% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="68"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Mike Alleyne" data-plan_activity="22" data-plan_count="4">
+        <div class="card">
+            <ng-template #popTitleMikeAlleyne>
+                <b>Mike Alleyne</b>
+            </ng-template>
+            <ng-template #popContentMikeAlleyne>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/no-pic.png" alt="Katie Farrell" />
+                </div>
+                <b>4</b> Plans
+            </ng-template>
+            <a href="/coaches/mike-alleyne">
+                <div class="card-body" [ngbPopover]="popContentMikeAlleyne" [popoverTitle]="popTitleMikeAlleyne" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Mike Alleyne</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/no-pic.png" alt="Mike Alleyne" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 4
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">22% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="22"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6 coach-card" data-coach="Alison Stansfield" data-plan_activity="23" data-plan_count="3">
+        <div class="card">
+            <ng-template #popTitleAlisonStansfield>
+                <b>Alison Stansfield</b>
+            </ng-template>
+            <ng-template #popContentAlisonStansfield>
+                <div class="profile-img-pop">
+                    <img src="assets/images/users/no-pic.png" alt="Alison Stansfield" />
+                </div>
+                <b>3</b> Plans
+            </ng-template>
+            <a href="/coaches/alison-stansfield">
+                <div class="card-body" [ngbPopover]="popContentAlisonStansfield" [popoverTitle]="popTitleAlisonStansfield" triggers="mouseenter:mouseleave" container="body">
+                    <h4 class="card-title">Alison Stansfield</h4>
+                    <div class="user-profile pb-4 border-bottom">
+                        <div class="profile-img">
+                            <img src="assets/images/users/no-pic.png" alt="Alison Stansfield" />
+                        </div>
+                    </div>
+                    <div class="text-right fifty">
+                        <h2 class="font-light font-weight-normal m-b-0">
+                            <i class="ti-arrow-up text-success"></i> 3
+                        </h2>
+                        <span class="text-muted">Plans</span>
+                    </div>
+                    <span class="text-success pa">23% plan activity</span>
+                    <ngb-progressbar [showValue]="false" type="success" [value]="23"></ngb-progressbar>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
